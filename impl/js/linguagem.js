@@ -22,15 +22,15 @@ elementos = {
             this.qntD++
         } else {
          
-        } return mensagem = `Quantidade de toner HP recarregado: ${this.qntHP} 
+        } return mensagem = `tonner HP recarregados : ${this.qntHP} 
         
-        Quantidade de Toner Sansung Recarregado : ${this.qntSG}
+         Tonner Sansung Recarregados  : ${this.qntSG}
 
-        Quantidade de toner Brother recarregado : ${this.qntB}
+         tonner Brother recarregados  : ${this.qntB}
 
-        Quantidade de Drum Substituido: ${this.qntD}
+         Drum Substituidos: ${this.qntD}
 
-        Quantidade de Toner Recarregados "Modelos fora Base de Dados" : ${this.qntO}`
+         Tonner Recarregados"Modelos fora Base de Dados" : ${this.qntO}`
 
     }
 }
