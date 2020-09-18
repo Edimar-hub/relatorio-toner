@@ -10,7 +10,7 @@ npm start
 no arquivo [database/conexao.js](/database/conexao.js) é onde estão as configurações para o banco de dados,
 para usar qualquer um dos banco de dados abaixo substitua as linhas conforme a configuração desejada
 
-### usando bando de dados mysql
+### usando banco de dados mysql
 ```javascript
 const mysql = require('mysql')
 
