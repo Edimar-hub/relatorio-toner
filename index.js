@@ -1,20 +1,33 @@
-const customExpress = require('./config/customExpress')
-const conexao = require('./database/conexao')
-const Tabelas = require('./database/tabelas')
+const express = require('express')
+const routes = require('./routes')
+const cors = require('cors')
 
-conexao.connect( (erro) => {
-       if (erro) {
-           console.log(erro)
-       }else{
-           console.log('conectado no banco com sucesso')
+const app = express()
+app.use(express.json() )
+app.use(routes)
 
-           Tabelas.init(conexao)
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+});
 
-           const app = customExpress()
+//not found
+app.use((req,res,next) => {
+    const error = new Error('Não encontrado')
 
-           app.listen(3000, () => console.log('servidor rodando na porta 3000'))
+    error.status = 404
 
-       }
+    next(error)
+
 })
+
+//catch all
+app.use((error,req,res,next) => {
+    res.status(error.status || 500)
+    res.json({error: error.message})
+})
+
+app.listen(3000, () => console.log('servidor rodando na porta 3000'))
 
 
