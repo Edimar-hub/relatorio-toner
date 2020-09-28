@@ -107,14 +107,17 @@
                         <div class="form-row">
                             <div class="form-group col-md-6 col-sm-12">
                                 <label for="recarga">QTD</label>
-                                <input type="text" class="form-control" id="recarga" v-model="novoToner.recarga">
+                                <input type="text" class="form-control" id="QTD" v-model="novoToner.recarga">
                             </div>
                             <div class="form-group col-md-6 col-sm-12">
                                 <label for="quantidade">Quantidade pó Quimico </label>
                                 <input type="number" class="form-control" id="quantidade" v-model="novoToner.quantidade">
                             </div>
-                    </div>
-                    
+                            <div class="form-row">
+                                <div class="form-group col-md-6 col-sm-12">
+                                    <label for="tipo">Lamina Wiper/Doctor Blade</label>
+                                    <input type="text" class="form-control" id="tipo" v-model="novoToner.tipo">
+                                </div>                  
                     </div>
                     <button v-if="btnEditar" class="btn btn-danger" @click="editarToner(novoToner.id)">Editar</button>
                     <button v-if="btnSalvar" class="btn btn-danger" @click="cadastrarToner()">Salvar</button>
